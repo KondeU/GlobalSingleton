@@ -30,6 +30,9 @@
     <ClInclude Include="TestExe.h">
       <Filter>源文件</Filter>
     </ClInclude>
+    <ClInclude Include="..\Common\GlobalSingletonRegister.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
