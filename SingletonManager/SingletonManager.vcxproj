@@ -123,10 +123,6 @@
   <ItemGroup>
     <ClCompile Include="SingletonManager.cpp" />
   </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\Common\NonCopyable.hpp" />
-    <ClInclude Include="..\Common\Singleton.hpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

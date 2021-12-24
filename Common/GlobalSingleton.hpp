@@ -1,31 +1,16 @@
 #pragma once
 
-#include "GlobalSingletonRegister.hpp"
+#include "GlobalSingletonInstance.hpp"
 
 template <typename T>
-class GlobalSingleton : public Singleton<GlobalSingleton<T>> {
+class GlobalSingleton : public Singleton<GlobalSingletonInstance<T>> {
 public:
     static T& GetReference()
     {
-        return *instance;
+        return Singleton<GlobalSingletonInstance<T>>::GetReference().GetReference();
     }
 
 protected:
-    GlobalSingleton()
-    {
-        instance = GlobalSingletonRegister::GetReference().Regist(
-            Singleton<T>::GetReference());
-    }
-
-    virtual ~GlobalSingleton()
-    {
-        GlobalSingletonRegister::GetReference().Unregist(
-            Singleton<T>::GetReference());
-    }
-
-private:
-    static T* instance;
+    GlobalSingleton() = default;
+    ~GlobalSingleton() = default;
 };
-
-template <typename T>
-T* GlobalSingleton<T>::instance;

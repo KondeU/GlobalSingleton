@@ -112,7 +112,8 @@
   <ItemGroup>
     <ClInclude Include="..\Common\DllWrapper.hpp" />
     <ClInclude Include="..\Common\GlobalSingleton.hpp" />
-    <ClInclude Include="..\Common\GlobalSingletonRegister.hpp" />
+    <ClInclude Include="..\Common\GlobalSingletonContext.hpp" />
+    <ClInclude Include="..\Common\GlobalSingletonInstance.hpp" />
     <ClInclude Include="..\Common\NonCopyable.hpp" />
     <ClInclude Include="..\Common\Singleton.hpp" />
     <ClInclude Include="TestExe.h" />

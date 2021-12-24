@@ -113,6 +113,12 @@
     <ClCompile Include="TestDll2.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Common\DllWrapper.hpp" />
+    <ClInclude Include="..\Common\GlobalSingleton.hpp" />
+    <ClInclude Include="..\Common\GlobalSingletonContext.hpp" />
+    <ClInclude Include="..\Common\GlobalSingletonInstance.hpp" />
+    <ClInclude Include="..\Common\NonCopyable.hpp" />
+    <ClInclude Include="..\Common\Singleton.hpp" />
     <ClInclude Include="TestDll2.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
