@@ -23,23 +23,5 @@
     <ClInclude Include="TestDll1.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="..\Common\DllWrapper.hpp">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\GlobalSingleton.hpp">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\GlobalSingletonContext.hpp">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\GlobalSingletonInstance.hpp">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\NonCopyable.hpp">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\Singleton.hpp">
-      <Filter>头文件</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

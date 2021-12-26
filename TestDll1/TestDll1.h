@@ -7,7 +7,7 @@
 #define DLL1_API __declspec(dllimport)
 #endif
 #else
-#define DLL1_API_EXPORT __attribute__((visibility("default")))
+#define DLL1_API __attribute__((visibility("default")))
 #endif
 
 extern "C" {
