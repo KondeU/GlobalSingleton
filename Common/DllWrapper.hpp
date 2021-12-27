@@ -13,7 +13,8 @@
 #define LIB_LOAD(file)       LoadLibraryA(file)
 #define LIB_UNLD(inst)       !FreeLibrary(inst)
 #define LIB_SYMB(inst, func) GetProcAddress(inst, func)
-#define LIB_EXTENSION_NAME   ".dll"
+#define LIB_EXTN             ".dll"
+#define LIB_PREN             ""
 #else
 #include <dlfcn.h>
 #define LIB_LIBRARY          void*
@@ -23,7 +24,8 @@
 #define LIB_LOAD(file)       dlopen(file, RTLD_LAZY)
 #define LIB_UNLD(inst)       dlclose(inst)
 #define LIB_SYMB(inst, func) dlsym(inst, func)
-#define LIB_EXTENSION_NAME   ".so"
+#define LIB_EXTN             ".so"
+#define LIB_PREN             "lib"
 #endif
 
 class DllWrapper final {
@@ -44,7 +46,7 @@ public:
             return false;
         }
 
-        library = LIB_LOAD((file + LIB_EXTENSION_NAME).c_str());
+        library = LIB_LOAD((LIB_PREN + file + LIB_EXTN).c_str());
         if (library == LIB_INVALID_LIBRARY) {
             return false;
         }
