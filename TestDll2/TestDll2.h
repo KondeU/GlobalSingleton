@@ -11,5 +11,5 @@
 #endif
 
 extern "C" {
-DLL2_API void TestDll2Run();
+    DLL2_API void TestDll2Run();
 }

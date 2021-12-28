@@ -7,7 +7,7 @@ class Singleton : public NonCopyable {
 public:
     static T& GetReference()
     {
-        static T instance;
+        static T instance{};
         return instance;
     }
 
