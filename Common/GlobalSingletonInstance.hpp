@@ -3,7 +3,7 @@
 #include "GlobalSingletonContext.hpp"
 
 template <typename T>
-class GlobalSingletonInstance {
+class GlobalSingletonInstance final {
 public:
     T& GetReference()
     {

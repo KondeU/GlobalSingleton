@@ -3,7 +3,7 @@
 #include "Singleton.hpp"
 #include "DllWrapper.hpp"
 
-class GlobalSingletonContext : public Singleton<GlobalSingletonContext> {
+class GlobalSingletonContext final : public Singleton<GlobalSingletonContext> {
 public:
     // singleton manager dynamic library: sgtmgr.dll or (lib)sgtmgr.so
     const std::string SingletonManagerLibrary = "sgtmgr";
