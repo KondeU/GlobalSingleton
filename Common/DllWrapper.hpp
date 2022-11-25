@@ -3,8 +3,10 @@
 #include <string>
 #include <functional>
 #include <unordered_map>
+#include "NonCopyable.hpp"
 
 #ifdef _WIN32
+#define NOMINMAX
 #include <Windows.h>
 #define LIB_LIBRARY          HMODULE
 #define LIB_PROCESS          FARPROC
@@ -28,7 +30,10 @@
 #define LIB_PREN             "lib"
 #endif
 
-class DllWrapper final {
+namespace au {
+namespace common {
+
+class DllWrapper final : public NonCopyable {
 public:
     DllWrapper()
     {
@@ -82,7 +87,11 @@ public:
     }
 
     template <typename Func, typename ...Args>
+    #if (__cplusplus > 201703L) || (_MSVC_LANG > 201703L)
+    typename std::invoke_result_t<std::function<Func>, Args...>
+    #else
     typename std::result_of<std::function<Func>(Args...)>::type
+    #endif
         ExecuteFunction(const std::string& func, Args&& ...args)
     {
         auto fn = GetFunction<Func>(func);
@@ -97,3 +106,6 @@ private:
     LIB_LIBRARY library;
     std::unordered_map<std::string, LIB_PROCESS> cache;
 };
+
+}
+}

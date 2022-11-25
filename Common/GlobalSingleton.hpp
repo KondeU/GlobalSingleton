@@ -2,6 +2,9 @@
 
 #include "GlobalSingletonInstance.hpp"
 
+namespace au {
+namespace common {
+
 template <typename T>
 class GlobalSingleton : public Singleton<GlobalSingletonInstance<T>> {
 public:
@@ -14,3 +17,6 @@ protected:
     GlobalSingleton() = default;
     ~GlobalSingleton() = default;
 };
+
+}
+}

@@ -3,7 +3,7 @@
 #include <iostream>
 #include "../Common/GlobalSingleton.hpp"
 
-class GlobalTestExe : public GlobalSingleton<GlobalTestExe> {
+class GlobalTestExe : public au::common::GlobalSingleton<GlobalTestExe> {
 public:
     GlobalTestExe()
     {

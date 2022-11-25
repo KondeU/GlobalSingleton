@@ -15,3 +15,5 @@ Windows使用注意事项：
    没有保证多线程间安全，因此在单例实例化/动态库首次获取单例时都是线程不安全的。
    若在SingletonManager.cpp的Count/Obtain/Release函数中使用std::mutex加锁能够实现
    单例获取的安全，但实例化过程(创建过程)仍是线程不安全的。
+
+C++版本要求：C++14 以上（MSVC v140 (VS2015) 以上，如果使用Visual Studio）。

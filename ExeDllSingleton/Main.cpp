@@ -20,7 +20,7 @@ int main(int argc, char* argv[])
 {
     //GlobalTestExe::GetReference().Test(); // 单例由exe加载
 
-    DllWrapper dll1, dll2;
+    au::common::DllWrapper dll1, dll2;
     dll1.Load("TestDll1"); // 单例由dll加载
     dll2.Load("TestDll2");
     dll1.ExecuteFunction<void()>("TestDll1Run");

@@ -2,6 +2,9 @@
 
 #include "GlobalSingletonContext.hpp"
 
+namespace au {
+namespace common {
+
 template <typename T>
 class GlobalSingletonInstance final {
 public:
@@ -24,3 +27,6 @@ public:
 private:
     T* instance;
 };
+
+}
+}
