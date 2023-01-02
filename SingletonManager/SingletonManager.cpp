@@ -1,4 +1,6 @@
 #include <typeinfo>
+#include <utility>
+#include <vector>
 #include <unordered_map>
 
 #ifdef _MSC_VER
