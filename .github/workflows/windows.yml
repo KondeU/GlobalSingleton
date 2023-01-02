@@ -1,0 +1,23 @@
+name: windows
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: ilammy/msvc-dev-cmd@v1
+    - name: build GlobalSingleton on windows
+      shell: bash
+      run: |
+        cmake -S . -B build
+        cmake --build build --config Release --parallel
+        cmake --install build --prefix output --config Release
+    - uses: actions/upload-artifact@v3
+      with:
+        name: GlobalSingleton
+        path: ./output

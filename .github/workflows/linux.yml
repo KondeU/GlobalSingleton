@@ -1,0 +1,22 @@
+name: linux
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: build GlobalSingleton on ubuntu
+      shell: bash
+      run: |
+        cmake -S . -B build
+        cmake --build build --config Release --parallel
+        cmake --install build --prefix output --config Release
+    - uses: actions/upload-artifact@v3
+      with:
+        name: GlobalSingleton
+        path: ./output
