@@ -1,4 +1,5 @@
 #include <typeinfo>
+#include <cstdint>
 #include <utility>
 #include <vector>
 #include <unordered_map>
