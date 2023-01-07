@@ -3,6 +3,7 @@
 #include <string>
 #include <functional>
 #include <unordered_map>
+#include <stdexcept>
 #include "NonCopyable.hpp"
 
 #ifdef _WIN32
@@ -97,7 +98,7 @@ public:
         auto fn = GetFunction<Func>(func);
         if (fn == nullptr) {
             std::string except = "Cannot find function: " + func;
-            throw std::exception(except.c_str());
+            throw std::logic_error(except);
         }
         return fn(std::forward<Args>(args)...);
     }
