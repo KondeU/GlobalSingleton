@@ -37,15 +37,17 @@ public:
     }
 
     template <typename T>
-    inline void Unregist()
+    inline size_t Unregist()
     {
         T* instance = manager.ExecuteFunction<T*(size_t)>(
             "Release", typeid(T).hash_code());
-        bool destruct = !(manager.ExecuteFunction<uint32_t(size_t)>(
-            "Count", typeid(T).hash_code()) > 0);
+        size_t count = manager.ExecuteFunction<uint32_t(size_t)>(
+            "Count", typeid(T).hash_code());
+        bool destruct = !(count > 0);
         if (instance && destruct) {
             instance->~T();
         }
+        return count;
     }
 
 private:
